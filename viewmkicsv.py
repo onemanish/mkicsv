@@ -19,7 +19,7 @@ def main():
         headers = headers[3:]
         df[headers] = df[headers].apply(pd.to_numeric)
         options = ['30S', '15S', '5S', '1T', '3T', '5T', '10T', '30T', 'H', '2H', 'D']
-        optPrompt = 'Select Time period for averaging... (S=Seconds, T=minuTes, H=Hours, D=Day)'
+        optPrompt = 'Select Time period for averaging... 30sec is default. (S=Seconds, T=minuTes, H=Hours, D=Day)'
         time_period = col2.selectbox(label=optPrompt, options=options)
         df = df.resample(time_period, on='datetime').mean()
         col2.write(f'Data points: {df.shape}')
