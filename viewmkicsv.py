@@ -29,5 +29,5 @@ def main():
         
 if __name__ == '__main__':
     st.set_page_config(layout='wide')
-    st.title('IAS CSV Viewer')
+    st.header('IAS CSV Viewer')
     main()
