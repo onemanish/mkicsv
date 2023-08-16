@@ -71,9 +71,9 @@ def main():
             extracted_filenames = extract_7z(uploaded_file)
 
         if extracted_filenames:
-            st.sidebar.success(f"Extracted {len(extracted_filenames)} files.")
+            # st.sidebar.success(f"Extracted {len(extracted_filenames)} files.")
             extracted_filenames = [x.split('/')[1] for x in extracted_filenames]
-            selected_file = st.sidebar.selectbox("Select a file", extracted_filenames)
+            selected_file = st.sidebar.radio(f'{len(extracted_filenames)} CSV files found... ', extracted_filenames)
             st.subheader(selected_file)
             display_data(selected_file)
         else:
